@@ -7,10 +7,11 @@ class restaurantArticles extends HTMLElement{
   render(){
     this.innerHTML = `
     <article class="restaurant-item">
-      <img src=${this._data.pictureId}>
+      <img src=${this._data.pictureId} alt="${this._data.name} image">
       <div class="restaurant-content">
-        <h3>${this._data.name}</h3>
+        <a href="#">${this._data.name}</a>
         <h4 class="restaurant-location">${this._data.city}</h4>
+        <h5>Rating : ${this._data.rating}</h5>
         <p>${this._data.description}</p>
       </div>
     </article>
