@@ -1,4 +1,4 @@
-class restaurantArticles extends HTMLElement{
+class restaurantArticle extends HTMLElement{
   set data(data){
     this._data = data
     this.render()
@@ -6,11 +6,11 @@ class restaurantArticles extends HTMLElement{
 
   render(){
     this.innerHTML = `
-    <article class="restaurant-item">
+    <article class="article-item">
       <img src=${this._data.pictureId} alt="${this._data.name} image">
-      <div class="restaurant-content">
+      <div class="article-content">
         <a href="#">${this._data.name}</a>
-        <h4 class="restaurant-location">${this._data.city}</h4>
+        <h4 class="article-location">${this._data.city}</h4>
         <h5>Rating : ${this._data.rating}</h5>
         <p>${this._data.description}</p>
       </div>
@@ -19,4 +19,4 @@ class restaurantArticles extends HTMLElement{
   }
 }
 
-customElements.define('restaurant-article', restaurantArticles)
+customElements.define('restaurant-article', restaurantArticle)

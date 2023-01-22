@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
-import './restaurantArticles'
+import './restaurantArticle'
+import './foodArticle'
 import Datas from '../DATA.json'
 import FoodDatas from '../FOODDATA.json'
 
@@ -17,7 +18,15 @@ Datas.map(data => {
 })
 
 // Foods Datas
+const foodList = document.getElementById('food-list')
 
+FoodDatas = FoodDatas.foods
+
+FoodDatas.map((data) => {
+  const foodArticle = document.createElement('food-article')
+  foodArticle.data = data
+  foodList.appendChild(foodArticle)
+})
 
 // Hamburger
 const hamburger = document.getElementById("hamburger")

@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+:root{
+  --primary: #2C3333;
+  --secondary: #395B64;
+  --tertiary: #A5C9CA;
+  --quaternary: #E7F6F2;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -18,7 +26,6 @@ a{
 }
 
 p{
-  margin-top: 16px;
   font-size: 16px;
   font-weight: 400;
 }
@@ -31,7 +38,7 @@ header{
   display: flex;
   justify-content: center;
   padding: 10px;
-  background: rgb(255, 153, 153);
+  background: var(--primary);
   color: white;
 }
 
@@ -53,7 +60,7 @@ header{
 
 .hamburger-container{
   display: flex;
-  background-color: rgb(255, 200, 200);
+  background-color: var(--secondary);
   justify-content: center;
   padding: 10px;
 }
@@ -61,10 +68,12 @@ header{
 #hamburger{
   border: none;
   background: transparent;
+  color: white;
 }
 
 #drawer{
   width: 100%;
+  background-color: var(--primary);
   position: absolute;
   transform: translate(-100%, 0);
   transition: 0.3s ease-in;
@@ -80,7 +89,7 @@ header{
 }
 
 .nav-list:nth-child(even){
-  background-color: rgb(62, 65, 73);
+  background-color: var(--secondary);
 }
 
 #drawer.open{
@@ -124,7 +133,7 @@ header{
 }
 
 .hero-title{
-  background: #000;
+  background: var(--secondary);
   border-radius: 5px;
   color: white;
   margin: auto;
@@ -132,9 +141,10 @@ header{
 
 .cta{
   margin-top: 40px;
-  background-color: rgb(255, 153, 153);;
+  background-color: var(--tertiary);;
   padding: 8px 16px;
-  color: white;
+  color: var(--primary);
+  font-weight: 700;
   min-height: 44px;
   min-width: 44px;
   border-radius: 5px;
@@ -156,49 +166,50 @@ header{
 
 .main-headline{
   text-align: center;
-  border-bottom: 1px solid rgb(255, 200, 200);
+  border-bottom: 2px solid var(--tertiary);
   margin: 8px 0;
 }
 
-#restaurant-list{
+.list{
   display: grid;
   padding: 24px;
   gap: 24px;
 }
 
-.restaurant-item{
+.article-item{
   margin: auto;
   box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: hidden;
 }
 
-.restaurant-item>img{
+.article-item>img{
   width: 100%;
 }
 
-.restaurant-content{
+.article-content{
   padding: 20px;
 }
 
-.restaurant-content>a{
+.article-content>a{
   color: black;
   font-size: 18px;
   font-weight: 700;
 }
 
-.restaurant-content>h4{
+.article-content>h4{
   font-size: 16px;
-  margin-bottom: 8px;
   font-weight: 500;
 }
 
-.restaurant-content>h5{
-  font-size: 12px;
+.article-content>h5{
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 4px;
   font-weight: 500;
 }
 
-.restaurant-content>p{
+.article-content>p{
   font-size: 14px;
   font-weight: 400;
 }
@@ -206,8 +217,9 @@ header{
 footer{
   position: relative;
   height: 100px;
-  background-color: rgb(255, 153, 153);;
+  background-color: var(--primary);;
 }
+
 
 .copyright{
   position: absolute;
@@ -216,6 +228,10 @@ footer{
   transform: translate(-50%, -50%);
 }
 
+.copyright>p{
+  font-weight: 700;
+  color: var(--quaternary);
+}
 
 @media screen and (min-width: 480px){
   .hamburger-container{
@@ -225,6 +241,7 @@ footer{
   #drawer{
     position: relative;
     display: flex;
+    background-color: var(--secondary);
     justify-content: space-evenly;
     padding: 10px 0;
     transform: translate(0, 0);
@@ -238,13 +255,13 @@ footer{
 
 
 @media screen and (min-width: 480px) {
-  #restaurant-list{
+  .list{
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (min-width: 800px) {
-  #restaurant-list{
+  .list{
     grid-template-columns: repeat(3, 1fr);
   }
 }
