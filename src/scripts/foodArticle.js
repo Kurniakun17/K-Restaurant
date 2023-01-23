@@ -10,7 +10,7 @@ class FoodArticle extends HTMLElement{
     <article class="article-item">
       <img class="food-img" src=${this._data.strMealThumb} alt="${this._data.strMeal} image">
       <div class="article-content">
-        <a href="#">${this._data.strMeal}</a>
+        <a href="#" class="article-title">${this._data.strMeal}</a>
         <h4 class="article-location">${this._data.strArea}</h4>
         <h5>Category :</h5>
         <p>${this._data.strCategory}</p>

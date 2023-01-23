@@ -69,6 +69,8 @@ header{
 
 #hamburger{
   border: none;
+  min-height: 44px;
+  min-width: 44px;
   background: transparent;
   color: white;
 }
@@ -193,10 +195,13 @@ header{
   padding: 20px;
 }
 
-.article-content>a{
+.article-title{
+  display: block;
   color: black;
   font-size: 18px;
   font-weight: 700;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .article-content>h4{
