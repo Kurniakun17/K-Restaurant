@@ -1,16 +1,15 @@
-class FoodArticle extends HTMLElement{
-  set data(data){
-    this._data = data
-    console.log(this._data.strThumb)
-    this.render()
+class DetailedFoodArticle extends HTMLElement {
+  set data(data) {
+    this._data = data;
+    this.render();
   }
-        // <div class="ingredients-container">
-  render(){
+
+  render() {
     this.innerHTML = `
     <article class="article-item">
       <img class="food-img" src=${this._data.strMealThumb} alt="${this._data.strMeal} image">
       <div class="article-content">
-        <a href="#" class="article-title">${this._data.strMeal}</a>
+        <a href="#/detailed/food/${this._data.idMeal}" class="article-title">${this._data.strMeal}</a>
         <h4 class="article-location">${this._data.strArea}</h4>
         <h5>Category :</h5>
         <p>${this._data.strCategory}</p>
@@ -22,8 +21,8 @@ class FoodArticle extends HTMLElement{
         <p>${this._data.strInstructions}</p>
       </div>
     </article>
-    `
+    `;
   }
 }
 
-customElements.define('food-article', FoodArticle)
+customElements.define('detailed-food-article', DetailedFoodArticle);
