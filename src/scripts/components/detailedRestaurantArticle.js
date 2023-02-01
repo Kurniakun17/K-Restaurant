@@ -1,7 +1,6 @@
 class DetailedRestaurantArticle extends HTMLElement {
   set data(data) {
     this._data = data;
-    console.log(data);
     this.render();
   }
 
@@ -52,7 +51,6 @@ class DetailedRestaurantArticle extends HTMLElement {
             <button type="submit">Submit</button>
           </form>
         </div>
-        <div id="fav-container"></div>
       </article>
     `;
   }

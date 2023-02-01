@@ -21,9 +21,6 @@ class DetailedFoodArticle extends HTMLElement {
         <p>${this._data.strInstructions}</p>
       </div>
     </article>
-    <div class="fav-container">
-      <i class="fa fa-heart" aria-hidden="true"></i>
-    </div>
     `;
   }
 }

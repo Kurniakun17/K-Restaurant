@@ -36,13 +36,13 @@ const createReview = (data) => {
 
 const createFavButton = () => `
   <button id="fav-button" class="fav-container">
-    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
 const createFavedButton = () => `
   <button id="fav-button" class="fav-container">
-    <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 

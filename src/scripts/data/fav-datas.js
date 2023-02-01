@@ -1,27 +1,27 @@
 import { openDB } from 'idb';
 
-const dbPromise = openDB('k-restaurant', 1, {
+const dbPromise = openDB('kRestaurant', 1, {
   upgrade(database) {
     database.createObjectStore('restaurants', { keyPath: 'id' });
-    database.createObjectStore('foods', { keyPath: 'id' });
   },
 });
 
 const favDatas = {
-  async getAllRestaurants() {
-    return (await dbPromise).getAll('restaurants');
+  async getAllDatas(objectStoreName) {
+    return (await dbPromise).getAll(objectStoreName);
   },
 
-  async putRestaurant(data) {
-    return (await dbPromise).put('restaurants', data);
+  async getData(objectStoreName, id) {
+    return (await dbPromise).get(objectStoreName, id);
   },
 
-  async getAllFoods() {
-    return (await dbPromise).getAll('foods');
+  async putData(objectStoreName, data) {
+    console.log(data);
+    return (await dbPromise).put(objectStoreName, data);
   },
 
-  async putFood(data) {
-    return (await dbPromise).put('foods', data);
+  async deleteData(objectStoreName, id) {
+    return (await dbPromise).delete(objectStoreName, id);
   },
 };
 
