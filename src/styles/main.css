@@ -169,7 +169,7 @@ header{
   width: 50%;
 }
 
-.main-headline{
+.headline{
   text-align: center;
   border-bottom: 2px solid var(--tertiary);
   margin: 12px 0;
@@ -180,6 +180,8 @@ header{
   padding: 24px;
   gap: 24px;
 }
+
+/* Article */
 
 .article-item{
   margin: auto;
@@ -196,37 +198,124 @@ header{
   padding: 20px;
 }
 
-.article-title{
+.categories-content{
+  display: flex;
+  justify-content:space-between;
+}
+
+.article-title, .categories-content > h3{
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: black;
-  font-size: 18px;
-  justify-content:left;
+  font-size: 20px;
+  align-self: center;
   font-weight: 700;
   min-height: 44px;
   min-width: 44px;
 }
 
+.article-categories{
+  margin-bottom: 0.5rem;
+}
+
+.categories-content > h3{
+  color: #f0ca00;
+}
+
 .article-content>h4{
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .article-content>h5{
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 8px;
   margin-bottom: 4px;
   font-weight: 500;
 }
 
-.article-content>p{
+.article-content p{
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+/* Menus */
+
+.menus-container > .headline, .review-container > .headline{
+  margin-top: 1.5rem;
+}
+
+.menus-item-container{
+  margin: 1rem 0;
+}
+
+.menus-item-title{
+  margin-bottom: 0.3rem;
+}
+
+/* Review */
+.review-item{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid slategray;
+  margin: 1rem 0;
+  border-radius: 5px;
+  padding: 1rem 0.5rem;
+}
+
+.review-item>h5{
+  margin: 0.3rem 0 0.5rem 0 ;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.review-form input{
+  width: 100%;
+  font-size: 16px;
+  padding: 0.5rem 0.3rem;
+  border-radius: 5px;
+}
+
+.review-form button{
+  width: 100%;
+  font-size: 16px;
+  border-radius: 3px;
+  padding: 0.5rem 0.3rem;
+}
+
+.review-form button:hover{
+  color: var(--quaternary);
+  background-color: var(--primary);
+}
+
+.fav-container{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  bottom: 20px;
+  right: 20px;
+  min-height: 44px;
+  min-width: 44px;
+  border: none;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.fa{
+  color: white;
+  font-size: 25px;
+  margin: auto;
 }
 
 /* Container */
-
 #container{
   margin: 2rem;
   width: 70%;

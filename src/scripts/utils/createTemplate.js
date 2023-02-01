@@ -2,6 +2,7 @@ import '../components/restaurantArticle';
 import '../components/foodArticle';
 import '../components/detailedRestaurantArticle';
 import '../components/detailedFoodArticle';
+import '../components/review';
 
 const createRestaurantArticle = (restaurant) => {
   const restaurantArticle = document.createElement('restaurant-article');
@@ -27,9 +28,30 @@ const createDetailedFoodArticle = (food) => {
   return detailedFoodArticle;
 };
 
+const createReview = (data) => {
+  const reviewComponent = document.createElement('review-component');
+  reviewComponent.data = data;
+  return reviewComponent;
+};
+
+const createFavButton = () => `
+  <button id="fav-button" class="fav-container">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+const createFavedButton = () => `
+  <button id="fav-button" class="fav-container">
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
 export {
   createRestaurantArticle,
   createFoodArticle,
   createDetailedRestaurantArticle,
   createDetailedFoodArticle,
+  createReview,
+  createFavButton,
+  createFavedButton,
 };

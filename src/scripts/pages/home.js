@@ -16,13 +16,13 @@ const Home = {
       </div>
       <section class="content">
         <div class="section-container-title">
-          <h2 class="main-headline">Restaurant List</h2>
+          <h2 class="headline">Restaurant List</h2>
         </div>
         <div id="restaurant-list" class="list"></div>
       </section>
       <section class="content">
         <div class="section-container-title">
-          <h2 class="main-headline">Food List</h2>
+          <h2 class="headline">Food List</h2>
         </div>
         <div id="food-list" class="list"></div>
       </section>
