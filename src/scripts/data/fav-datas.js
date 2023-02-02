@@ -2,6 +2,7 @@ import { openDB } from 'idb';
 
 const dbPromise = openDB('kRestaurant', 1, {
   upgrade(database) {
+    database.createObjectStore('foods', { keyPath: 'id' });
     database.createObjectStore('restaurants', { keyPath: 'id' });
   },
 });
@@ -16,7 +17,6 @@ const favDatas = {
   },
 
   async putData(objectStoreName, data) {
-    console.log(data);
     return (await dbPromise).put(objectStoreName, data);
   },
 

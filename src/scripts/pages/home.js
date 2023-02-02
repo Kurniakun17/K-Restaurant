@@ -6,21 +6,21 @@ const Home = {
   async render() {
     return (
       `
-      <div class="hero">
-        <div class="hero-content-container">
-          <h2 class="hero-title">An Online Restaurant Guide That Helps You Find The Best Food and Place to Eat</h2>
+      <div class="hero home">
+        <div class="hero-content-container wrapper">
+          <h1 class="hero-title">An Online Restaurant Guide That Helps You Find The Best Food and Place to Eat</h1>
           <Button class="cta" onclick="location.href='#main'">
             Let's Find Out
           </Button>
         </div>
       </div>
-      <section class="content">
+      <section class="content wrapper">
         <div class="section-container-title">
-          <h2 class="headline">Restaurant List</h2>
+          <h1 class="headline">Restaurant List</h1>
         </div>
         <div id="restaurant-list" class="list"></div>
       </section>
-      <section class="content">
+      <section class="content wrapper">
         <div class="section-container-title">
           <h2 class="headline">Food List</h2>
         </div>

@@ -22,7 +22,7 @@ const Detail = {
       return this._createDetailedRestaurant(url.id, container);
     }
     const data = FoodData.foods.filter((food) => food.idMeal === url.id)[0];
-    return container.appendChild(createDetailedFoodArticle(data));
+    return this._createDetailedFood(data, container);
   },
 
   async _createDetailedRestaurant(id, container) {
@@ -41,6 +41,12 @@ const Detail = {
       initiator.FavButton(favData);
     };
     return rehydrate();
+  },
+
+  async _createDetailedFood(foodData, container) {
+    container.appendChild(createDetailedFoodArticle(foodData));
+    const favData = { ...foodData, id: foodData.idMeal };
+    initiator.FavButton(favData);
   },
 
   _isRestaurant(type) {
