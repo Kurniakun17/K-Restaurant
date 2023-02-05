@@ -6,15 +6,15 @@ class DetailedRestaurantArticle extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <article class="article-item">
+    <article class="article-item detailed">
       <img src=https://restaurant-api.dicoding.dev/images/small/${this._data.pictureId} alt="${this._data.name} image">
-        <div class="article-content">
+        <div class="article-content-detailed">
           <div class="categories-content">
-            <a href="#/detailed/restaurant/${this._data.id}" class="article-title">${this._data.name}</a>
-            <h3>★ ${this._data.rating}</h3>
+            <h2 class="article-title">${this._data.name}</h2>
+            <h2 class="rating">★ ${this._data.rating}</h2>
           </div>
-          <h4 class="article-location">${this._data.city}</h4>
-          <h5 class="article-categories">Categories : ${this._data.categories.map((category) => `<span> ${category.name}</span>`)}.</h5>
+          <h3 class="article-location">${this._data.city}</h3>
+          <h4 class="article-categories">Categories : ${this._data.categories.map((category) => `<span> ${category.name}</span>`)}.</h4>
           <p class="article-detailed-description">${this._data.description}</p>
           <div class="misc-container">
             <div class="menus-container">

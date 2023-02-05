@@ -11,12 +11,15 @@ class restaurantArticle extends HTMLElement {
         <img src=https://restaurant-api.dicoding.dev/images/small/${this._data.pictureId} alt="${this._data.name} image">
       </div>
       <div class="article-content">
-      <div class="categories-content">
-        <a href="#/detailed/restaurant/${this._data.id}" class="article-title">${this._data.name}</a>
-        <h3>★ ${this._data.rating}</h3>
-      </div>
-      <h4 class="article-location">${this._data.city}</h4>
-      <p class="article-description">${this._data.description}</p>
+        <div class="categories-content">
+          <h3 class="article-title">${this._data.name}</h3>
+          <h3 class="rating">★ ${this._data.rating}</h3>
+        </div>
+        <h4 class="article-location">${this._data.city}</h4>
+        <p class="article-description">${this._data.description}</p>
+        <div class="see-more">
+          <a href="#/detailed/restaurant/${this._data.id}">Read more...</a>
+        </div>
       </div>
     </article>
     `;

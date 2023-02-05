@@ -8,7 +8,9 @@ const Detail = {
   async render() {
     return (
       `
-        <div id="container"></div>
+        <div id="container">
+          <h2>Loading. . .</h2>
+        </div>
         <div id="fav-container" class="fav-container"></div>
       `
     );
@@ -22,25 +24,40 @@ const Detail = {
       return this._createDetailedRestaurant(url.id, container);
     }
     const data = FoodData.foods.filter((food) => food.idMeal === url.id)[0];
+    container.innerHTML = '';
     return this._createDetailedFood(data, container);
   },
 
   async _createDetailedRestaurant(id, container) {
-    const data = await (await fetch(`${config.base_url}/detail/${id}`)).json();
-    container.appendChild(createDetailedRestaurantArticle(data.restaurant));
-    const rehydrate = () => {
-      initiator.Form(id);
-      const favData = {
-        pictureId: data.restaurant.pictureId,
-        name: data.restaurant.name,
-        id: data.restaurant.id,
-        rating: data.restaurant.rating,
-        description: data.restaurant.description,
-        city: data.restaurant.city,
+    this._container = container;
+    try {
+      const data = await (await fetch(`${config.base_url}/detail/${id}`)).json();
+      if (data.error) {
+        this._container.innerHTML = `
+        <h2>${data.message}</h2>
+        `;
+        return this._container;
+      }
+
+      this._container.innerHTML = '';
+      this._container.appendChild(createDetailedRestaurantArticle(data.restaurant));
+      const rehydrate = () => {
+        initiator.Form(id);
+        const favData = {
+          pictureId: data.restaurant.pictureId,
+          name: data.restaurant.name,
+          id: data.restaurant.id,
+          rating: data.restaurant.rating,
+          description: data.restaurant.description,
+          city: data.restaurant.city,
+        };
+        initiator.FavButton(favData);
       };
-      initiator.FavButton(favData);
-    };
-    return rehydrate();
+      return rehydrate();
+    } catch (err) {
+      this._container.innerHTML = `<h2>${err.message}</h2>`;
+      return this._container;
+    }
   },
 
   async _createDetailedFood(foodData, container) {

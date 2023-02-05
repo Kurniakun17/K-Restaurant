@@ -18,13 +18,17 @@ const Home = {
         <div class="section-container-title">
           <h1 class="headline">Restaurant List</h1>
         </div>
-        <div id="restaurant-list" class="list"></div>
+        <div id="restaurant-list" class="list">
+          <h2>Loading. . .</h2>
+        </div>
       </section>
       <section class="content wrapper">
         <div class="section-container-title">
           <h2 class="headline">Food List</h2>
         </div>
-        <div id="food-list" class="list"></div>
+        <div id="food-list" class="list">
+          <h2>Loading. . .</h2>
+        </div>
       </section>
     `
     );
@@ -33,23 +37,29 @@ const Home = {
   async afterRender() {
     const restaurantList = document.getElementById('restaurant-list');
     const foodList = document.getElementById('food-list');
+    try {
+      const RestaurantDatas = await (await fetch(`${config.base_url}/list`)).json();
+      if (this.reqStatus(RestaurantDatas)) {
+        document.body.innerHTML = `
+          <div class="error-request">
+            <h1>${RestaurantDatas.message}</h1>
+          </div>
+        `;
+      }
 
-    const RestaurantDatas = await (await fetch(`${config.base_url}/list`)).json();
-    if (this.reqStatus(RestaurantDatas)) {
-      document.body.innerHTML = `
-        <div class="error-request">
-          <h1>${RestaurantDatas.message}</h1>
-        </div>
-      `;
+      restaurantList.innerHTML = '';
+      foodList.innerHTML = '';
+
+      RestaurantDatas.restaurants.forEach((restaurant) => {
+        restaurantList.appendChild(createRestaurantArticle(restaurant));
+      });
+
+      FoodDatas.foods.forEach((food) => {
+        foodList.appendChild(createFoodArticle(food));
+      });
+    } catch (err) {
+      restaurantList.innerHTML = `<h2>${err.message}<h2>`;
     }
-
-    RestaurantDatas.restaurants.forEach((restaurant) => {
-      restaurantList.appendChild(createRestaurantArticle(restaurant));
-    });
-
-    FoodDatas.foods.forEach((food) => {
-      foodList.appendChild(createFoodArticle(food));
-    });
   },
 
   reqStatus(data) {

@@ -11,7 +11,7 @@ class FoodArticle extends HTMLElement {
         <img class="food-img" src=${this._data.strMealThumb} alt="${this._data.strMeal} image">
       </div>  
       <div class="article-content">
-        <a href="#/detailed/food/${this._data.idMeal}" class="article-title">${this._data.strMeal}</a>
+        <h3 class="article-title-food">${this._data.strMeal}</h3>
         <h4 class="article-location">${this._data.strArea}</h4>
         <h5>Category :</h5>
         <p>${this._data.strCategory}</p>
@@ -21,7 +21,10 @@ class FoodArticle extends HTMLElement {
         ${this._data.strIngredient8}, ${this._data.strIngredient9}</p>
         <h5>Instruction: </h5>
         <p class="article-instruction">${this._data.strInstructions}</p>
-      </div>
+        <div class="see-more">
+          <a href="#/detailed/food/${this._data.idMeal}">Read more...</a>
+        </div>
+        </div>
     </article>
     `;
   }

@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import App from './app';
+import serviceWorkerRegister from './utils/serviceWorkerResgister';
 
 const app = new App({
   drawer: document.getElementById('drawer'),
@@ -10,6 +11,7 @@ const app = new App({
 
 window.addEventListener('load', () => {
   app.renderPage();
+  serviceWorkerRegister();
 });
 
 window.addEventListener('hashchange', () => {
