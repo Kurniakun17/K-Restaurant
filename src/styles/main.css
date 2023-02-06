@@ -30,7 +30,7 @@ body{
   color: rgb(62, 65, 73);
 }
 
-a{
+a, button, input, textarea{
   justify-content: center;
   min-height: 44px;
   min-width: 44px;
@@ -80,8 +80,9 @@ header{
 
 .skip-link{
   position: absolute;
+  color: var(--base);
   padding: 12px;
-  background: aquamarine;
+  background: var(--complementary);
   z-index: 3;
   top: -50px;
 }
@@ -186,7 +187,7 @@ header{
 }
 
 .hero-title{
-  font-size: 30px;
+  font-size: 24px;
   color: white;
   margin: auto;
 }
@@ -210,6 +211,12 @@ header{
   padding-top: 100px;
   min-height: 90vh;
   flex-direction: column;
+}
+
+#main-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .blur{
@@ -286,7 +293,8 @@ header{
   padding: 10px 20px;
 }
 
-.article-categories{
+.article-categories, .article-categories span{
+  color: #4f4f4f;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -316,8 +324,9 @@ header{
 }
 
 .article-location{
+  color: #4f4f4f;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
@@ -439,6 +448,8 @@ header{
 
 .review-form input, .review-form textarea{
   width: 100%;
+  min-width: 44%;
+  min-height: 44px;
   font-size: 16px;
   padding: 0.5rem 0.3rem;
   border-radius: 5px;
@@ -449,6 +460,8 @@ header{
 .review-form button{
   width: 100%;
   font-size: 16px;
+  min-width: 44%;
+  min-height: 44px;
   font-weight: bold;
   border-radius: 3px;
   background-color: var(--complementary);
@@ -530,7 +543,7 @@ footer{
 }
 
 @media screen and (min-width: 520px){
-  .title h1{
+  .hero-title{
     font-size: 32px;
   }
 
@@ -546,9 +559,9 @@ footer{
 
   #drawer{
     position: relative;
+    width: 40%;
     max-width: 450px;
     display: flex;
-    width: 50%;
     background-color: transparent;
     top: 0;
     left: 0;
@@ -561,6 +574,7 @@ footer{
   }
 
   .nav-item{
+    font-size: 18px;
     margin: 0;
   }
 
@@ -590,7 +604,7 @@ footer{
     font-size: 40px;
   }
 
-  #drawer{
-    width: 30%;
+  .nav-item{
+    font-size: 20px;
   }
 }

@@ -14,22 +14,24 @@ const Home = {
           </Button>
         </div>
       </div>
-      <section class="content wrapper">
-        <div class="section-container-title">
-          <h1 class="headline">Restaurant List</h1>
-        </div>
-        <div id="restaurant-list" class="list">
-          <h2>Loading. . .</h2>
-        </div>
-      </section>
-      <section class="content wrapper">
-        <div class="section-container-title">
-          <h2 class="headline">Food List</h2>
-        </div>
-        <div id="food-list" class="list">
-          <h2>Loading. . .</h2>
-        </div>
-      </section>
+      <div id="main-content" tabindex="0">
+        <section class="content wrapper">
+          <div class="section-container-title">
+            <h1 class="headline">Restaurant List</h1>
+          </div>
+          <div id="restaurant-list" class="list">
+            <h2>Loading. . .</h2>
+          </div>
+        </section>
+        <section class="content wrapper">
+          <div class="section-container-title">
+            <h2 class="headline">Food List</h2>
+          </div>
+          <div id="food-list" class="list">
+            <h2>Loading. . .</h2>
+          </div>
+        </section>
+      </div>
     `
     );
   },

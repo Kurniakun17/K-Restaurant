@@ -58,6 +58,7 @@ const initiator = {
   _renderFav() {
     this._favContainer.innerHTML = createFavButton();
     const favButton = document.getElementById('fav-button');
+    favButton.setAttribute('aria-label', 'add to favorite');
     favButton.addEventListener('click', () => {
       favDatas.putData(this._objectStoreName, this._data);
       this._renderButton();
@@ -67,6 +68,7 @@ const initiator = {
   _renderFaved() {
     this._favContainer.innerHTML = createFavedButton();
     const favButton = document.getElementById('fav-button');
+    favButton.setAttribute('aria-label', 'add to favorite');
     favButton.addEventListener('click', () => {
       favDatas.deleteData(this._objectStoreName, this._id);
       this._renderButton();

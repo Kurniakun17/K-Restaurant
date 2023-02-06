@@ -8,10 +8,12 @@ const Detail = {
   async render() {
     return (
       `
+      <div id="main-content" tabindex="0">
         <div id="container">
           <h2>Loading. . .</h2>
         </div>
         <div id="fav-container" class="fav-container"></div>
+      </div>
       `
     );
   },

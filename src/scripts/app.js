@@ -30,6 +30,12 @@ class App {
     this._drawer.classList.remove('open');
     this._main.classList.remove('blur');
     this._main.scrollIntoView();
+    const skipLinkElem = document.querySelector('.skip-link');
+    skipLinkElem.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.getElementById('main-content').focus();
+    });
+
     await page.afterRender();
   }
 }
