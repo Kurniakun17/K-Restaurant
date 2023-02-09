@@ -18,7 +18,7 @@
 *{
   padding: 0;
   margin: 0;
-  color: black;
+  color: var(--text);
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
@@ -150,9 +150,9 @@ header{
   font-weight: bold;
 }
 
-.nav-item>a{
-  text-align: center;
-  justify-content: center;
+.nav-item:hover{
+  color: var(--complementary);
+  text-decoration: underline;
 }
 
 .hero{
@@ -258,7 +258,7 @@ header{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: var(--primary);
+  color: var(--complementary);
   font-weight: 500;
 }
 
@@ -311,6 +311,10 @@ header{
 }
 
 .article-title{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   color: black;
   max-width: 70%;
 }
@@ -319,13 +323,19 @@ header{
   margin: 0.5rem 0 0.3rem 0;
 }
 
+.article-item-ingredients{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .rating{
   color: #f0ca00;
 }
 
 .article-location{
   color: #4f4f4f;
-  font-size: 18px;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }

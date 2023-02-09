@@ -46,8 +46,6 @@ const Favorite = {
       );
     }
 
-    console.log(foodData);
-
     if (foodData.length === 0) {
       foodList.classList.add('empty');
       foodList.innerHTML = `

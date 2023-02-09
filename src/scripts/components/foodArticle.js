@@ -16,7 +16,7 @@ class FoodArticle extends HTMLElement {
         <h5>Category :</h5>
         <p>${this._data.strCategory}</p>
         <h5>Ingredients:</h5>
-        <p> ${this._data.strIngredient1}, ${this._data.strIngredient2}, ${this._data.strIngredient3}
+        <p class="article-item-ingredients"> ${this._data.strIngredient1}, ${this._data.strIngredient2}, ${this._data.strIngredient3}
         ${this._data.strIngredient4}, ${this._data.strIngredient5}, ${this._data.strIngredient6}, ${this._data.strIngredient7}
         ${this._data.strIngredient8}, ${this._data.strIngredient9}</p>
         <h5>Instruction: </h5>

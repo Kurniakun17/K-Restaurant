@@ -52,6 +52,7 @@ const Detail = {
           rating: data.restaurant.rating,
           description: data.restaurant.description,
           city: data.restaurant.city,
+          type: 'restaurants',
         };
         initiator.FavButton(favData);
       };
@@ -64,7 +65,7 @@ const Detail = {
 
   async _createDetailedFood(foodData, container) {
     container.appendChild(createDetailedFoodArticle(foodData));
-    const favData = { ...foodData, id: foodData.idMeal };
+    const favData = { ...foodData, id: foodData.idMeal, type: 'foods' };
     initiator.FavButton(favData);
   },
 

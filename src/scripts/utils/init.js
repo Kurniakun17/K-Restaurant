@@ -42,7 +42,7 @@ const initiator = {
     this._data = data;
     this._favContainer = document.getElementById('fav-container');
     this._url = UrlParser.ActiveUrlWithoutCombiner();
-    this._objectStoreName = `${this._url.type}s`;
+    this._objectStoreName = data.type;
 
     await this._renderButton();
   },
@@ -68,7 +68,7 @@ const initiator = {
   _renderFaved() {
     this._favContainer.innerHTML = createFavedButton();
     const favButton = document.getElementById('fav-button');
-    favButton.setAttribute('aria-label', 'add to favorite');
+    favButton.setAttribute('aria-label', 'remove from favorite');
     favButton.addEventListener('click', () => {
       favDatas.deleteData(this._objectStoreName, this._id);
       this._renderButton();

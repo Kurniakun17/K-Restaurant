@@ -9,7 +9,7 @@ const Home = {
       <div class="hero home">
         <div class="hero-content-container wrapper">
           <h1 class="hero-title">An Online Restaurant Guide That Helps You Find The Best Food and Place to Eat</h1>
-          <Button class="cta" onclick="location.href='#main'">
+          <Button class="cta" onclick="location.href='#main-content'">
             Let's Find Out
           </Button>
         </div>
