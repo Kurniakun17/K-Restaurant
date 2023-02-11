@@ -1,4 +1,4 @@
-import favDatas from '../src/scripts/data/fav-datas';
+import favDatas from '../src/scripts/data/favDatas';
 import initiator from '../src/scripts/utils/init';
 
 describe('Favoriting Item', () => {
@@ -8,7 +8,7 @@ describe('Favoriting Item', () => {
 
   beforeEach(async () => {
     createFavContainer();
-    await initiator.FavButton({ id: 1, type: 'restaurants' });
+    await initiator.FavButton({ id: 1, type: 'restaurants' }, favDatas);
   });
 
   it('Should show the add to favorite button on unfavorited item', async () => {
@@ -41,7 +41,9 @@ describe('Favoriting Item', () => {
     favDatas.deleteData('restaurants', 1);
   });
 
-  xit('Should not store an undefined item ID', async () => {
-    await initiator.FavButton({});
+  it('Should not store an undefined item ID', async () => {
+    await favDatas.putData('restaurants', {});
+
+    expect(await favDatas.getAllDatas('restaurants')).toEqual([]);
   });
 });

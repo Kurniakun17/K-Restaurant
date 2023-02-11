@@ -8,7 +8,26 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'viewport'],
+
+    viewport: {
+      breakpoints: [
+        {
+          name: 'screen',
+          size: {
+            width: 1440,
+            height: 900,
+          },
+        },
+        {
+          name: 'mobile',
+          size: {
+            width: 360,
+            height: 480,
+          },
+        },
+      ],
+    },
 
     // list of files / patterns to load in the browser
     files: [

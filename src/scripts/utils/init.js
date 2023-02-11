@@ -1,4 +1,3 @@
-import favDatas from '../data/fav-datas';
 import config from '../globals/config';
 import UrlParser from '../routes/urlParser';
 import { createFavButton, createFavedButton } from './createTemplate';
@@ -37,18 +36,19 @@ const initiator = {
     });
   },
 
-  async FavButton(data) {
+  async FavButton(data, favDataModel) {
     this._id = data.id;
     this._data = data;
     this._favContainer = document.getElementById('fav-container');
     this._url = UrlParser.ActiveUrlWithoutCombiner();
+    this._favDatas = favDataModel;
     this._objectStoreName = data.type;
 
     await this._renderButton();
   },
 
   async _renderButton() {
-    if (await favDatas.getData(this._objectStoreName, this._id)) {
+    if (await this._favDatas.getData(this._objectStoreName, this._id)) {
       this._renderFaved();
     } else {
       this._renderFav();
@@ -60,7 +60,7 @@ const initiator = {
     const favButton = document.getElementById('fav-button');
     favButton.setAttribute('aria-label', 'add to favorite');
     favButton.addEventListener('click', () => {
-      favDatas.putData(this._objectStoreName, this._data);
+      this._favDatas.putData(this._objectStoreName, this._data);
       this._renderButton();
     });
   },
@@ -70,7 +70,7 @@ const initiator = {
     const favButton = document.getElementById('fav-button');
     favButton.setAttribute('aria-label', 'remove from favorite');
     favButton.addEventListener('click', () => {
-      favDatas.deleteData(this._objectStoreName, this._id);
+      this._favDatas.deleteData(this._objectStoreName, this._id);
       this._renderButton();
     });
   },

@@ -3,6 +3,7 @@ import UrlParser from '../routes/urlParser';
 import FoodData from '../../FOODDATA.json';
 import { createDetailedFoodArticle, createDetailedRestaurantArticle } from '../utils/createTemplate';
 import initiator from '../utils/init';
+import favDatas from '../data/favDatas';
 
 const Detail = {
   async render() {
@@ -54,7 +55,7 @@ const Detail = {
           city: data.restaurant.city,
           type: 'restaurants',
         };
-        initiator.FavButton(favData);
+        initiator.FavButton(favData, favDatas);
       };
       return rehydrate();
     } catch (err) {

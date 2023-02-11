@@ -17,7 +17,11 @@ const favDatas = {
   },
 
   async putData(objectStoreName, data) {
-    return (await dbPromise).put(objectStoreName, data);
+    if (data.id) {
+      return (await dbPromise).put(objectStoreName, data);
+    }
+
+    return null;
   },
 
   async deleteData(objectStoreName, id) {

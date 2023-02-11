@@ -1,4 +1,4 @@
-import favDatas from '../data/fav-datas';
+import favDatas from '../data/favDatas';
 import { createFoodArticle, createRestaurantArticle } from '../utils/createTemplate';
 
 const Favorite = {
