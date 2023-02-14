@@ -17,7 +17,7 @@ const Home = {
       <div id="main-content" tabindex="0">
         <section class="content wrapper">
           <div class="section-container-title">
-            <h1 class="headline">Restaurant List</h1>
+            <h2 class="headline">Restaurant List</h2>
           </div>
           <div id="restaurant-list" class="list">
             <h2>Loading. . .</h2>

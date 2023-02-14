@@ -6,8 +6,7 @@
   --text: #2C3333;
   --drawer: #e5e5e5;
   --complementary: #00c2cb;
-  /* --tertiary: ;
-  --quaternary: ; */
+  --save-complementary: #007b81;
   /*   
   --primary: #2C3333;
   --secondary: #395B64;
@@ -258,7 +257,7 @@ header{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: var(--complementary);
+  color: var(--save-complementary);
   font-weight: 500;
 }
 
@@ -474,7 +473,7 @@ header{
   min-height: 44px;
   font-weight: bold;
   border-radius: 3px;
-  background-color: var(--complementary);
+  background-color: var(--save-complementary);
   color: var(--base);
   padding: 0.5rem 0.3rem;
   border: 1px solid var(--secondary);
@@ -590,6 +589,7 @@ footer{
 
   .nav-bar-logo{
     width: 100px;
+    height: 100px;
   }
 }
 

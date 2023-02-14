@@ -11,7 +11,7 @@ const Favorite = {
         </div>
         </div>
       <div id="main-content" tabindex="0">
-        <section class="content wrapper">
+        <section id="favorite-content" class="content wrapper">
         <div id="fav-restaurant" class="fav-restaurant">
           <div class="section-container-title">
             <h2 class="headline">Restaurants</h2>
