@@ -2,33 +2,30 @@ import FoodDatas from '../../FOODDATA.json';
 import config from '../globals/config';
 import { createFoodArticle, createRestaurantArticle, createArticleSkeleton } from '../utils/createTemplate';
 
-const Home = {
+const Catalogue = {
   async render() {
     return (
       `
-      <div class="hero home">
-        <div class="hero-content-container wrapper">
-          <h1 class="hero-title">An Online Restaurant Guide That Helps You Find The Best Food and Place to Eat</h1>
-          <Button class="cta" onclick="location.href='#main-content'">
-            Let's Find Out
-          </Button>
-        </div>
+    <div class="hero small catalogue">
+      <div class="hero-content-container wrapper">
+        <h1 class="hero-title">Catalogue</h1>
       </div>
+    </div>
       <div id="main-content" tabindex="0">
         <section class="content wrapper">
           <div class="section-container-title">
-            <h2 class="headline">Featured Restaurant</h2>
+            <h2 class="headline">Restaurant List</h2>
           </div>
           <div id="restaurant-list" class="list">
-            ${createArticleSkeleton(8)}
+            ${createArticleSkeleton(20)}
           </div>
         </section>
         <section class="content wrapper">
           <div class="section-container-title">
-            <h2 class="headline">Featured Food</h2>
+            <h2 class="headline">Food List</h2>
           </div>
           <div id="food-list" class="list">
-            ${createArticleSkeleton(4)}
+            ${createArticleSkeleton(5)}
           </div>
         </section>
       </div>
@@ -52,14 +49,12 @@ const Home = {
       restaurantList.innerHTML = '';
       foodList.innerHTML = '';
 
-      for (let i = 0; i < 8; i += 1) {
-        restaurantList.appendChild(createRestaurantArticle(RestaurantDatas.restaurants[i]));
-      }
+      RestaurantDatas.restaurants.forEach((restaurant) => {
+        restaurantList.appendChild(createRestaurantArticle(restaurant));
+      });
 
-      FoodDatas.foods.forEach((food, index) => {
-        if (index < 4) {
-          foodList.appendChild(createFoodArticle(food));
-        }
+      FoodDatas.foods.forEach((food) => {
+        foodList.appendChild(createFoodArticle(food));
       });
     } catch (err) {
       restaurantList.innerHTML = `<h2>${err.message}<h2>`;
@@ -71,4 +66,4 @@ const Home = {
   },
 };
 
-export default Home;
+export default Catalogue;

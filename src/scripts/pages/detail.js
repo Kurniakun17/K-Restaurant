@@ -67,7 +67,7 @@ const Detail = {
   async _createDetailedFood(foodData, container) {
     container.appendChild(createDetailedFoodArticle(foodData));
     const favData = { ...foodData, id: foodData.idMeal, type: 'foods' };
-    initiator.FavButton(favData);
+    initiator.FavButton(favData, favDatas);
   },
 
   _isRestaurant(type) {

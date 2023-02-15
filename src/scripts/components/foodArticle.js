@@ -8,7 +8,7 @@ class FoodArticle extends HTMLElement {
     this.innerHTML = `
     <article class="article-item">
       <div class="img-container">
-        <img class="food-img" src=${this._data.strMealThumb} alt="${this._data.strMeal} image">
+        <img class="food-img lazyload" src=${this._data.strMealThumb} alt="${this._data.strMeal} image">
       </div>  
       <div class="article-content">
         <h3 class="article-title-food">${this._data.strMeal}</h3>
@@ -19,8 +19,6 @@ class FoodArticle extends HTMLElement {
         <p class="article-item-ingredients"> ${this._data.strIngredient1}, ${this._data.strIngredient2}, ${this._data.strIngredient3}
         ${this._data.strIngredient4}, ${this._data.strIngredient5}, ${this._data.strIngredient6}, ${this._data.strIngredient7}
         ${this._data.strIngredient8}, ${this._data.strIngredient9}</p>
-        <h5>Instruction: </h5>
-        <p class="article-instruction">${this._data.strInstructions}</p>
         <div class="see-more">
           <a href="#/detailed/food/${this._data.idMeal}">Read more...</a>
         </div>

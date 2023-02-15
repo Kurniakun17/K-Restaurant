@@ -7,7 +7,7 @@ class DetailedRestaurantArticle extends HTMLElement {
   render() {
     this.innerHTML = `
     <article class="article-item detailed">
-      <img src=https://restaurant-api.dicoding.dev/images/small/${this._data.pictureId} alt="${this._data.name} image">
+      <img class="lazyload" src=https://restaurant-api.dicoding.dev/images/small/${this._data.pictureId} alt="${this._data.name} image">
         <div class="article-content-detailed">
           <div class="categories-content">
             <h2 class="article-title">${this._data.name}</h2>

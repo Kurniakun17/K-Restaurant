@@ -70,7 +70,7 @@ header{
 }
 
 .title h1{
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .title-span{
@@ -166,17 +166,23 @@ header{
 .home{
   display: flex;
   justify-content: center;
-
   background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_4.jpg') no-repeat 50%;
   background-size: cover;
   height: 70vh;
 }
 
+.catalogue{
+  background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_1.jpg') no-repeat 50%;
+}
+
 .favorite{
+  background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_2.jpg') no-repeat 50%;
+}
+
+.small{
   display: flex;
   text-align: center;
   justify-content: center;
-  background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_2.jpg') no-repeat 50%;
   background-size: cover;
 }
 
@@ -186,7 +192,7 @@ header{
 }
 
 .hero-title{
-  font-size: 24px;
+  font-size: 2rem;
   color: white;
   margin: auto;
 }
@@ -237,8 +243,9 @@ header{
 
 .list{
   display: grid;
-  padding: 24px;
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 1.5rem;
+  gap: 1.5rem;
 }
 
 .empty{
@@ -247,6 +254,11 @@ header{
 }
 
 /* Article */
+.article-item{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 5px;
+}
+
 .see-more{
   display: flex;
   justify-content: end;
@@ -261,16 +273,10 @@ header{
   font-weight: 500;
 }
 
-.article-item{
-  margin: auto;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  border-radius: 5px;
-  max-width: 350px;
-  overflow: hidden;
-}
 
 .detailed{
   max-width: 600px;
+  margin: auto;
 }
 
 .img-container{
@@ -282,6 +288,8 @@ header{
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .food{
@@ -354,7 +362,6 @@ header{
   display: -webkit-box;
   font-size: 16px;
   font-weight: 400;
-  margin-bottom: 0.5rem;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -512,6 +519,18 @@ header{
   min-height: 40vh;
 }
 
+.fav-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.fav-list .article-item{
+  max-width: 450px;
+}
+
 
 /* Container */
 #container{
@@ -551,13 +570,60 @@ footer{
   height: 100vh;
 }
 
+/* Skeleton */
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+  width: 100%;
+}
+
+.skeleton-text{
+  width: 100%;
+  height: 1rem;
+}
+
+.categories-content.skeleton{
+  gap: 1rem;
+  animation: none;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.rating.skeleton-text{
+  width: 30%;
+}
+
+.skeleton-description{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.skeleton-text.last{
+  width: 80%;
+}
+
+.see-more p{
+  width: 30%;
+  height: 1rem;
+  margin-top: 0.875rem;
+}
+
+
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+
+
 @media screen and (min-width: 520px){
   .hero-title{
     font-size: 32px;
-  }
-
-  .list{
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -568,8 +634,7 @@ footer{
 
   #drawer{
     position: relative;
-    width: 40%;
-    max-width: 450px;
+    width: clamp(40%, 45%, 450px);
     display: flex;
     background-color: transparent;
     top: 0;
@@ -591,21 +656,17 @@ footer{
     width: 100px;
     height: 100px;
   }
-}
-
-@media screen and (min-width: 1080px) {
-  .list{
-    grid-template-columns: repeat(3, 1fr);
-    width: fit-content;
-    margin: auto;
+/* 
+  .favorite{
+    background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_2-large.jpg') no-repeat 50%;
   }
+
+  .home{
+    background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_4-large.jpg') no-repeat 50%;
+  } */
 }
 
 @media screen and (min-width: 1200px) {
-  .list{
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .hero{
     min-width: 1000px;
   }
