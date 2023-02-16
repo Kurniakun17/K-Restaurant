@@ -48,11 +48,11 @@ module.exports = {
     }),
     new ImageminWebpackPlugin({
       pngquant: {
-        quality: '50',
+        quality: '70',
       },
       plugins: [
         imageminMozjpeg({
-          quality: 50,
+          quality: 70,
           progressive: true,
         }),
       ],
@@ -62,7 +62,7 @@ module.exports = {
         {
           test: /\.(jpe?g|png)/,
           options: {
-            quality: 50,
+            quality: 70,
           },
         },
       ],

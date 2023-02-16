@@ -126,7 +126,7 @@ header{
 
 #drawer li{
   border-bottom: 1px solid slategray;
-  padding: 1.6rem 1rem;
+  padding: 1.25rem 1rem;
 }
 
 .nav-list{
@@ -159,30 +159,32 @@ header{
   height: 25vh;
   position: relative;
   background-blend-mode: darken;
-  background-repeat: no-repeat;
   padding: 3rem 2rem;
 }
 
 .home{
   display: flex;
   justify-content: center;
-  background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_4.jpg') no-repeat 50%;
-  background-size: cover;
+  background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_4-small.jpg') no-repeat 50%;
   height: 70vh;
 }
 
 .catalogue{
-  background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_1.jpg') no-repeat 50%;
+  background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_1-small.jpg') no-repeat 50%;
 }
 
 .favorite{
-  background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_2.jpg') no-repeat 50%;
+  background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_2-small.jpg') no-repeat 50%;
 }
 
 .small{
   display: flex;
   text-align: center;
   justify-content: center;
+  background-size: cover;
+}
+
+.hero{
   background-size: cover;
 }
 
@@ -656,14 +658,21 @@ footer{
     width: 100px;
     height: 100px;
   }
-/* 
+
   .favorite{
     background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_2-large.jpg') no-repeat 50%;
+    background-size: cover;
   }
 
   .home{
     background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_4-large.jpg') no-repeat 50%;
-  } */
+    background-size: cover;
+  }
+
+  .catalogue{
+    background: linear-gradient(150deg,rgba(27,27,27,.5),rgba(27,27,27,.5)), url('../public/images/heros/hero-image_1-large.jpg') no-repeat 50%;
+    background-size: cover;
+  }
 }
 
 @media screen and (min-width: 1200px) {

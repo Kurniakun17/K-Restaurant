@@ -34,7 +34,7 @@ const Detail = {
   async _createDetailedRestaurant(id, container) {
     this._container = container;
     try {
-      const data = await (await fetch(`${config.base_url}/detail/${id}`)).json();
+      let data = await (await fetch(`${config.base_url}/detail/${id}`)).json();
       if (data.error) {
         this._container.innerHTML = `
         <h2>${data.message}</h2>
@@ -43,20 +43,23 @@ const Detail = {
       }
 
       this._container.innerHTML = '';
-      this._container.appendChild(createDetailedRestaurantArticle(data.restaurant));
+      data = { ...data.restaurant, customerReviews: data.restaurant.customerReviews.reverse() };
+      console.log(data);
+      this._container.appendChild(createDetailedRestaurantArticle(data));
       const rehydrate = () => {
         initiator.Form(id);
         const favData = {
-          pictureId: data.restaurant.pictureId,
-          name: data.restaurant.name,
-          id: data.restaurant.id,
-          rating: data.restaurant.rating,
-          description: data.restaurant.description,
-          city: data.restaurant.city,
+          pictureId: data.pictureId,
+          name: data.name,
+          id: data.id,
+          rating: data.rating,
+          description: data.description,
+          city: data.city,
           type: 'restaurants',
         };
         initiator.FavButton(favData, favDatas);
       };
+
       return rehydrate();
     } catch (err) {
       this._container.innerHTML = `<h2>${err.message}</h2>`;

@@ -7,13 +7,13 @@ const initiator = {
     const form = document.getElementById('form');
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const nama = document.getElementById('nama').value;
-      const review = document.getElementById('review').value;
+      const nama = document.getElementById('nama');
+      const review = document.getElementById('review');
       if (review === '' || nama === '') {
         // eslint-disable-next-line no-alert
         return alert('name or review cannot be null');
       }
-      const reviewData = { id, name: nama, review };
+      const reviewData = { id, name: nama.value, review: review.value };
       const error = await fetch(`${config.base_url}/review`, {
         method: 'POST',
         headers: {
@@ -21,10 +21,11 @@ const initiator = {
         },
         body: JSON.stringify(reviewData),
       });
-      const res = await error.json();
+      let res = await error.json();
+      res = res.customerReviews.reverse();
       const reviewContainer = document.getElementsByClassName('review-item-container')[0];
       reviewContainer.innerHTML = `
-        ${res.customerReviews.map((reviewItem) => (
+        ${res.map((reviewItem) => (
     `<div class="review-item">
               <h4>${reviewItem.name}</h4>
               <h5>${reviewItem.date}</h5>
@@ -32,6 +33,9 @@ const initiator = {
           </div>`
   )).join('')}
       `;
+
+      nama.value = '';
+      review.value = '';
       return res;
     });
   },
