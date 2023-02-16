@@ -8,7 +8,10 @@ class restaurantArticle extends HTMLElement {
     this.innerHTML = `
     <article class="article-item">
     <div class="img-container">
-      <img class="lazyload" src=https://restaurant-api.dicoding.dev/images/small/${this._data.pictureId} alt="${this._data.name} image">
+    <img class="lazyload" src=https://restaurant-api.dicoding.dev/images/small/${this._data.pictureId} alt="${this._data.name} image">
+      <picture>
+        <source media="(max-width: 600px)" srcset="https://restaurant-api.dicoding.dev/images/small/${this._data.pictureId}">
+      </picture>
     </div>
     <div class="article-content">
       <div class="categories-content">

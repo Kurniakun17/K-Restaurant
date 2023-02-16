@@ -15,22 +15,47 @@ const Home = {
         </div>
       </div>
       <div id="main-content" tabindex="0">
-        <section class="content wrapper">
+        <section class="intro content wrapper">
           <div class="section-container-title">
-            <h2 class="headline">Featured Restaurant</h2>
+            <h2 class="headline">Catalogue Contains</h2>
           </div>
-          <div id="restaurant-list" class="list">
-            ${createArticleSkeleton(8)}
+          <div class="intro list">
+            <div class="intro-item">
+              <h3>20</h3>
+              <p>Restaurants</p>
+            </div>
+            <div class="intro-item">
+              <h3>8</h3>
+              <p>Foods</p>
+            </div>
+            <div class="intro-item">
+              <h3>>50</h3>
+              <p>Reviews</p>
+            </div>
           </div>
         </section>
-        <section class="content wrapper">
-          <div class="section-container-title">
-            <h2 class="headline">Featured Food</h2>
+        <section class="featured-content">
+        <div class="rounded-corner"></div>
+        <div class="featured main">
+          <div class="wrapper">
+            <div class="container-content">
+              <div class="section-container-title">
+                <h2 class="headline">Featured Restaurant</h2>
+              </div>
+              <div id="restaurant-list" class="list">
+                ${createArticleSkeleton(8)}
+              </div>
+            </div>
+            <div class="container-content">
+              <div class="section-container-title">
+                <h2 class="headline">Featured Food</h2>
+              </div>
+              <div id="food-list" class="list">
+                ${createArticleSkeleton(4)}
+              </div>
+            </div>
           </div>
-          <div id="food-list" class="list">
-            ${createArticleSkeleton(4)}
-          </div>
-        </section>
+        </div>
       </div>
     `
     );
@@ -48,6 +73,8 @@ const Home = {
           </div>
         `;
       }
+
+      console.log(RestaurantDatas);
 
       restaurantList.innerHTML = '';
       foodList.innerHTML = '';
