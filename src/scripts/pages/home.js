@@ -17,19 +17,28 @@ const Home = {
       <div id="main-content" tabindex="0">
         <section class="intro content wrapper">
           <div class="section-container-title">
-            <h2 class="headline">Catalogue Contains</h2>
+            <h2 class="headline xl-headline">Our Catalogue Consist of</h2>
           </div>
           <div class="intro list">
             <div class="intro-item">
-              <h3>20</h3>
+              <div class="intro-heading">  
+                <i class="first-icon icon fa-solid fa-utensils"></i>
+                <h3>20</h3>
+              </div>
               <p>Restaurants</p>
             </div>
             <div class="intro-item">
-              <h3>8</h3>
+              <div class="intro-heading">  
+                <i class="icon fa-solid fa-burger"></i>
+                <h3>8</h3>
+              </div>
               <p>Foods</p>
             </div>
             <div class="intro-item">
-              <h3>>50</h3>
+              <div class="intro-heading">  
+                <i class="icon fa-solid fa-comment"></i>
+                <h3>50+</h3>
+              </div>
               <p>Reviews</p>
             </div>
           </div>
@@ -40,7 +49,7 @@ const Home = {
           <div class="wrapper">
             <div class="container-content">
               <div class="section-container-title">
-                <h2 class="headline">Featured Restaurant</h2>
+                <h2 class="headline xl-headline">Featured Restaurant</h2>
               </div>
               <div id="restaurant-list" class="list">
                 ${createArticleSkeleton(8)}
@@ -48,7 +57,7 @@ const Home = {
             </div>
             <div class="container-content">
               <div class="section-container-title">
-                <h2 class="headline">Featured Food</h2>
+                <h2 class="headline xl-headline">Featured Food</h2>
               </div>
               <div id="food-list" class="list">
                 ${createArticleSkeleton(4)}

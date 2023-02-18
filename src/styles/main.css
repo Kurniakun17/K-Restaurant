@@ -28,7 +28,12 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'Epilogue', sans-serif;
 }
 
-body{
+main{
+  min-height: 100vh;
+}
+
+html, body{
+  min-height: 100vh;
   background-color: #F9F7F7;
   color: rgb(62, 65, 73);
 }
@@ -221,14 +226,13 @@ header{
 /* End of Hero Section */
 
 .content{
-  margin: 40px 0;
+  margin: 60px 0;
 }
 
 /* Main */
 #main{
   display: flex;
   padding-top: 100px;
-  min-height: 90vh;
   flex-direction: column;
 }
 
@@ -250,10 +254,14 @@ header{
 
 .headline{
   text-align: center;
-  border-bottom: 2px solid var(--complementary);
   margin-bottom: 12px;
-  font-size: 36px;
+  padding-bottom: 4px;
+  font-size: 24px;
   width: 100%;
+}
+
+.xl-headline{
+  font-size: 36px;
 }
 
 .list{
@@ -284,9 +292,25 @@ header{
   text-align: center;
 }
 
-.intro-item > h3{
+.intro-heading{
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
   font-size: 40px;
+}
+
+.intro-heading h3, .intro-heading i{
   color: var(--save-complementary);
+}
+
+.icon{
+  font-size: 36px;
+}
+
+.first-icon{
+  font-size: 35px;
+  position: relative;
+  top: 4px;
 }
 
 .intro-item > p{

@@ -7,20 +7,20 @@ const Favorite = {
       `
       <div class="hero small favorite">
         <div class="hero-content-container wrapper">
-          <h1 class="hero-title">Favorites Foods and Restaurants!</h1>
+          <h1 class="hero-title xl-headline">Favorites Foods and Restaurants!</h1>
         </div>
       </div>
       <div id="main-content" tabindex="0">
         <section id="favorite-content" class="content wrapper">
         <div id="fav-restaurant" class="fav-restaurant">
           <div class="section-container-title">
-            <h2 class="headline">Restaurants</h2>
+            <h2 class="headline xl-headline">Favorite Restaurants</h2>
           </div>
           <div id="fav-restaurant-list" class="fav-list"></div>
         </div>
         <div id="fav-food" class="fav-food">
           <div class="section-container-title">
-            <h2 class="headline">Foods</h2>
+            <h2 class="headline xl-headline">Favorite Foods</h2>
           </div>
           <div id="fav-food-list" class="fav-list"></div>
         </div>
