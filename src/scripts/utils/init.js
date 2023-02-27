@@ -1,6 +1,9 @@
 import config from '../globals/config';
 import UrlParser from '../routes/urlParser';
-import { createFavButton, createFavedButton } from './createTemplate';
+import {
+  createFavButton, createFavedButton, createFoodArticle, createRestaurantArticle,
+} from './createTemplate';
+import FoodDatas from '../../FOODDATA.json';
 
 const initiator = {
   async Form(id) {
@@ -37,6 +40,39 @@ const initiator = {
       nama.value = '';
       review.value = '';
       return res;
+    });
+  },
+
+  async searchCatalogue(data) {
+    this._form = data.form;
+    this._input = data.input;
+    this._radio = data.radio;
+    this._restaurantList = data.restaurantList;
+    this._foodList = data.foodList;
+
+    this._form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (this._radio.checked) {
+        const fetchData = await (await fetch(`${config.base_url}/search?q=${this._input.value}`)).json();
+        this._restaurantList.innerHTML = '';
+        fetchData.restaurants.forEach((restaurant) => {
+          this._restaurantList.appendChild(createRestaurantArticle(restaurant));
+        });
+      } else {
+        // eslint-disable-next-line max-len
+        const filteredDatas = FoodDatas.foods.filter((food) => food.strMeal.toLowerCase().includes(this._input.value.toLowerCase()));
+        this._foodList.innerHTML = '';
+        filteredDatas.forEach((food) => {
+          this._foodList.appendChild(createFoodArticle(food));
+        });
+        this._foodList.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  },
+
+  FoodLogoButton(data) {
+    data.foodButton.addEventListener('click', () => {
+      data.foodList.scrollIntoView({ behavior: 'smooth' });
     });
   },
 

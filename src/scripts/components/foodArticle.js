@@ -9,10 +9,12 @@ class FoodArticle extends HTMLElement {
     <article class="article-item">
       <div class="img-container">
         <img class="food-img lazyload" src=${this._data.strMealThumb} alt="${this._data.strMeal} image">
+        <div class="location-container">
+          <h4 class="article-location">${this._data.strArea}</h4>
+        </div>
       </div>  
       <div class="article-content">
         <h3 class="article-title-food">${this._data.strMeal}</h3>
-        <h4 class="article-location">${this._data.strArea}</h4>
         <h5>Category :</h5>
         <p>${this._data.strCategory}</p>
         <h5>Ingredients:</h5>
@@ -22,7 +24,7 @@ class FoodArticle extends HTMLElement {
         <div class="see-more">
           <a href="#/detailed/food/${this._data.idMeal}">Read more...</a>
         </div>
-        </div>
+      </div>
     </article>
     `;
   }

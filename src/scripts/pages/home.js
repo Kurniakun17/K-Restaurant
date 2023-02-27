@@ -54,6 +54,9 @@ const Home = {
               <div id="restaurant-list" class="list">
                 ${createArticleSkeleton(8)}
               </div>
+              <div class="see-all-container">
+                <a href="#/catalogue">See All Restaurants</a>
+              </div>
             </div>
             <div class="container-content">
               <div class="section-container-title">
@@ -61,6 +64,9 @@ const Home = {
               </div>
               <div id="food-list" class="list">
                 ${createArticleSkeleton(4)}
+              </div>
+              <div class="see-all-container">
+                <a href="#/catalogue">See All Foods</a>
               </div>
             </div>
           </div>
@@ -83,7 +89,11 @@ const Home = {
         `;
       }
 
-      console.log(RestaurantDatas);
+      RestaurantDatas.restaurants.sort((a, b) => b.rating - a.rating);
+
+      setTimeout(() => {
+
+      });
 
       restaurantList.innerHTML = '';
       foodList.innerHTML = '';

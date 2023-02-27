@@ -36,13 +36,13 @@ const createReview = (data) => {
 
 const createFavButton = () => `
   <button id="fav-button" class="fav-container">
-    <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <i class="fa fa-heart-o fa-4xl" aria-hidden="true"></i>
   </button>
 `;
 
 const createFavedButton = () => `
   <button id="fav-button" class="fav-container">
-    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart fa-4xl" aria-hidden="true"></i>
   </button>
 `;
 
@@ -61,7 +61,6 @@ const createArticleSkeleton = (num) => {
         </div>
         <h4 class="article-location skeleton skeleton-text"></h4>
         <div class="skeleton-description">
-          <p class="article-description skeleton skeleton-text"></p>
           <p class="article-description skeleton skeleton-text"></p>
           <p class="article-description skeleton skeleton-text"></p>
           <p class="article-description skeleton skeleton-text last"></p>

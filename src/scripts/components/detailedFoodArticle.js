@@ -9,10 +9,12 @@ class DetailedFoodArticle extends HTMLElement {
     <article class="article-item detailed">
       <div class="img-container food">
         <img class="food-img lazyload" src=${this._data.strMealThumb} alt="${this._data.strMeal} image">
-      </div>
+        <div class="location-container">
+          <h3 class="article-location">${this._data.strArea}</h3>
+        </div>
+        </div>
       <div class="article-content-detailed">
         <h2 class="article-title-food">${this._data.strMeal}</h2>
-        <h3 class="article-location">${this._data.strArea}</h3>
         <div class="article-category">
           <h4>Category :</h4>
           <p>${this._data.strCategory}</p>
