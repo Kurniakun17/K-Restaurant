@@ -229,7 +229,7 @@ header{
 /* End of Hero Section */
 
 .content{
-  margin: 60px 0;
+  margin: 30px 0;
 }
 
 /* Main */
@@ -408,7 +408,7 @@ footer{
 
 .copyright>p{
   font-weight: 700;
-  color: var(--quaternary);
+  color: var(--base);
 }
 
 /* Error Request */
