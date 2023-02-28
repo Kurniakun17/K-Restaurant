@@ -1,6 +1,6 @@
 
 @media screen and (min-width: 760px) {
-  .hamburger-container{
+  #hamburger{
     display: none;
   }
 

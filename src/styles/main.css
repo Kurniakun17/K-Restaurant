@@ -104,19 +104,54 @@ header{
   width: 80px;
 }
 
-.hamburger-container{
+#hamburger{
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: all 0.5s ease-in-out;
 }
 
-#hamburger{
-  border: none;
-  min-height: 44px;
-  min-width: 44px;
+.hamburger-inside{
+  content: '';
+  width: 30px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: var(--save-complementary);
+}
+
+.hamburger-inside::before, .hamburger-inside::after{
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: var(--save-complementary);
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburger-inside::before{
+  transform: translate(-15px,10px);
+}
+
+.hamburger-inside::after{
+  transform: translate(-15px,-10px);
+}
+
+.hamburger-container.open .hamburger-inside {
+  transform: translateX(-65px);
   background: transparent;
-  font-size: 36px;
-  font-weight: bold;
-  color: var(--save-complementary);
+}
+
+.hamburger-container.open .hamburger-inside::before{
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.hamburger-container.open .hamburger-inside::after{
+  transform: rotate(45deg) translate(35px, -35px);
 }
 
 #drawer{
@@ -136,7 +171,6 @@ header{
 
 #drawer li{
   border-bottom: 1px solid slategray;
-  padding: 1.25rem 1rem;
 }
 
 .nav-list{
@@ -159,11 +193,15 @@ header{
   font-weight: bold;
   font-family: 'Tilt Warp', sans-serif, cursive;
   color: var(--save-complementary);
+  padding: 1.5rem 1rem;
+
 }
 
 .nav-item:hover{
   color: var(--complementary);
   text-decoration: underline;
+  background-color: #028080;
+  color: white;
 }
 
 .hero{

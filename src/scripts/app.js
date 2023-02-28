@@ -13,12 +13,14 @@ class App {
   _rehydrate() {
     this._hamburger.addEventListener('click', (event) => {
       this._drawer.classList.toggle('open');
+      this._hamburger.classList.toggle('open');
       this._main.classList.toggle('blur');
       event.stopPropagation();
     });
 
     this._main.addEventListener('click', () => {
       this._drawer.classList.remove('open');
+      this._hamburger.classList.remove('open');
       this._main.classList.remove('blur');
     });
   }
