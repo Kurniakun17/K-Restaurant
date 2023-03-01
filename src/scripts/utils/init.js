@@ -53,7 +53,7 @@ const initiator = {
     this._form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (this._radio.checked) {
-        const fetchData = await (await fetch(`${config.base_url}/search?q=${this._input.value}`)).json();
+        const fetchData = this._input.value ? await (await fetch(`${config.base_url}/search?q=${this._input.value}`)).json() : await (await fetch(`${config.base_url}/list`)).json();
         this._restaurantList.innerHTML = '';
         fetchData.restaurants.forEach((restaurant) => {
           this._restaurantList.appendChild(createRestaurantArticle(restaurant));

@@ -229,9 +229,14 @@
   scroll-snap-align: center;
 }
 
-.review-item-container{
+.review-item-container, .testi-item-container{
   grid-auto-columns: 100%;
   scroll-snap-type: x mandatory;
+}
+
+.testi-item-container{
+  max-width: 500px;
+  margin: auto;
 }
 
 .review-item>h5{

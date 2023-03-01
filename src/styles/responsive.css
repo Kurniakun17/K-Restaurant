@@ -6,7 +6,7 @@
 
   #drawer{
     position: relative;
-    width: clamp(40%, 45%, 450px);
+    width: clamp(40%, 100%, 450px);
     display: flex;
     background-color: transparent;
     top: 0;
@@ -23,6 +23,11 @@
   .nav-item{
     font-size: 16px;
     margin: 0;
+  }
+
+  .nav-item:hover{
+    background: transparent;
+    color: var(--complementary);
   }
 
   .nav-bar-logo{
@@ -69,6 +74,9 @@
 }
 
 @media screen and (min-width: 1200px) {
+  #drawer{
+    width: clamp(40%, 100%, 500px);
+  }
   .hero{
     min-width: 1000px;
   }
@@ -79,5 +87,14 @@
 
   .nav-item{
     font-size: 20px;
+  }
+
+  .testi-item-container{
+    grid-auto-columns: 49.2%;
+    max-width: 1000px;
+  }
+
+  .testi-card{
+    scroll-snap-align: end;
   }
 }

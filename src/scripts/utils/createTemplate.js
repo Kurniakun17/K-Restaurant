@@ -75,6 +75,37 @@ const createArticleSkeleton = (num) => {
   return allSkeletonTemplate;
 };
 
+const createTestimonialSkeleton = () => (`
+  <div class="testi-card ">
+  <div class="testi-restaurant">
+    <h3 class="testi-restaurant-title skeleton"></h3>
+    <h3 class="rating skeleton"></h3>
+  </div>
+  <div class="testi-content">
+    <h4 class="skeleton"></h4>
+  </div>
+  <div class="testi-person">
+    <h4 class="skeleton"></h4>
+  </div>
+  </div>
+  </div>
+`);
+
+const createTestimonial = (data) => (`
+  <div class="testi-card ">
+    <div class="testi-restaurant">
+      <h3 class="testi-restaurant-title">${data.name}</h3>
+      <h3 class="rating">★ ${data.rating}</h3>
+    </div>
+    <div class="testi-content">
+      <h4>${data.customerReviews[0].review}</h4>
+    </div>
+    <div class="testi-person">
+      <h4>${data.customerReviews[0].name}</h4>
+    </div>
+  </div>
+  </div>`);
+
 export {
   createRestaurantArticle,
   createFoodArticle,
@@ -84,4 +115,6 @@ export {
   createFavButton,
   createFavedButton,
   createArticleSkeleton,
+  createTestimonialSkeleton,
+  createTestimonial,
 };

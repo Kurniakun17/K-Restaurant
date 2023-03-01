@@ -26,6 +26,10 @@
   scroll-margin-top: 160px;
 }
 
+html, body{
+  min-height: 100%;
+}
+
 h1, h2, h3, h4, h5, h6{
   font-family: 'Epilogue', sans-serif;
 }
@@ -191,7 +195,7 @@ header{
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  font-family: 'Tilt Warp', sans-serif, cursive;
+  font-family: 'Epilogue', sans-serif, cursive;
   color: var(--save-complementary);
   padding: 1.5rem 1rem;
 
@@ -392,10 +396,19 @@ header{
   background: #edeef3;
 }
 
+.divider-container{
+  background-color: var(--save-complementary);
+}
+
+.rounded-corner-reverse{
+  height: 50px;
+  border-bottom-left-radius: 8rem;
+  border-bottom-right-radius: 8rem;
+  background: #edeef3;
+}
 /* Favorite */
 .fav-restaurant{
   justify-content: center;
-  /* text-align: center; */
   min-height: 40vh;
 }
 
@@ -417,6 +430,62 @@ header{
   max-width: 450px;
 }
 
+/* Swiper */
+.testimonial{
+  padding: 1rem 0;
+  background-color: var(--save-complementary);
+}
+
+.testi-headline{
+  margin-top: 1rem;
+  color: var(--base);
+}
+
+.testi-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--text);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 5px;
+  border-bottom: 5px solid var(--complementary);
+  scroll-snap-align: center;
+  transition: all 0.25s ease-in-out;
+}
+
+.testi-restaurant{
+  display: flex;
+  justify-content: space-between;
+}
+
+.testi-content > h4{
+  text-align: center;
+  color: var(--base);
+}
+
+.testi-restaurant-title{
+  color: var(--complementary);
+}
+
+.testi-person{
+  display: flex;
+  justify-content: end;
+}
+
+.testi-person > h4{
+  text-align: end;
+  color: var(--complementary);
+}
+
+.testi-card:hover{
+  background-color: var(--base);
+}
+
+.testi-card:hover > .testi-content > h4{
+  color: #2C3333;
+}
 
 /* Container */
 #container{
@@ -485,6 +554,32 @@ footer{
 
 .skeleton-text.last{
   width: 80%;
+}
+
+.testi-restaurant-title.skeleton{
+  height: 1rem;
+  width: 40%;
+  display: block;
+}
+
+.testi-content > h4.skeleton{
+  display: block;
+  height: 1rem;
+  width: 90%;
+  margin: auto;
+}
+
+.rating.skeleton{
+  width: 20%;
+  height: 1rem;
+  display: block;
+}
+
+.testi-person > h4.skeleton{
+  width: 30%;
+  height: 1rem;
+  display: inline-block;
+  text-align: end;
 }
 
 .see-more p{
