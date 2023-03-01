@@ -1,6 +1,7 @@
 import FoodDatas from '../../FOODDATA.json';
 import config from '../globals/config';
 import {
+  // eslint-disable-next-line max-len
   createFoodArticle, createRestaurantArticle, createArticleSkeleton, createTestimonial, createTestimonialSkeleton,
 } from '../utils/createTemplate';
 

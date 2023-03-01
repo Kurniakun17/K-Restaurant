@@ -44,7 +44,6 @@ const Detail = {
 
       this._container.innerHTML = '';
       data = { ...data.restaurant, customerReviews: data.restaurant.customerReviews.reverse() };
-      console.log(data);
       this._container.appendChild(createDetailedRestaurantArticle(data));
       const rehydrate = () => {
         initiator.Form(id);
