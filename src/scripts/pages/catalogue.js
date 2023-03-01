@@ -17,7 +17,7 @@ const Catalogue = {
         <div class="form-wrapper">
           <form id="search-catalogue" class="catalogue-form">
             <div class="search-container">
-              <input id="search-catalogue-input" placeholder="">
+              <input id="search-catalogue-input" placeholder="'Search by name, category, and menu'">
               <button id="search-catalogue-button" type="submit"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
             </div>
             <div class="radio-container">
